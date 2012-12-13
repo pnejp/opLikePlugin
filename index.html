@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Oplikeplugin : add &quot;nice!&quot; button &amp; counts in OpenPNE3.x" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Oplikeplugin</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/ichikawatatsuya/opLikePlugin">View on GitHub</a>
+
+          <h1 id="project_title">Oplikeplugin</h1>
+          <h2 id="project_tagline">add &quot;nice!&quot; button &amp; counts in OpenPNE3.x</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/ichikawatatsuya/opLikePlugin/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/ichikawatatsuya/opLikePlugin/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>opLikePlugin概要</h1>
+
+<p>「いいね！」機能を追加します。</p>
+
+<p>「いいね！」をクリックするといいね！が付きます。<br>
+自分のつけた「いいね！」は「いいね！を取り消す」をクリックすることで取り消すことができます。  </p>
+
+<p>スマートフォンにも対応しています。</p>
+
+<h2>スクリーンショット</h2>
+
+<p><a href="http://tejimaya.github.com/opNicePlugin/images/nice_01_rm_01.png" target="brank">
+<img src="http://tejimaya.github.com/opNicePlugin/images/nice_01_rm_01.png" height="150/"></a>
+<a href="http://tejimaya.github.com/opNicePlugin/images/nice_01_rm_03.png" target="brank">
+<img src="http://tejimaya.github.com/opNicePlugin/images/nice_01_rm_03.png" height="150/"></a>
+<a href="http://tejimaya.github.com/opNicePlugin/images/nice_01_rm_02.png" target="brank">
+<img src="http://tejimaya.github.com/opNicePlugin/images/nice_01_rm_02.png" height="150/"></a>
+<a href="http://tejimaya.github.com/opNicePlugin/images/nice_01_rm_04.png" target="brank">
+<img src="http://tejimaya.github.com/opNicePlugin/images/nice_01_rm_04.png" height="150/"></a></p>
+
+<h2>対応プラグイン</h2>
+
+<p>opTimelinePlugin<br>
+opDiaryPlugin<br>
+opCommunityTopicPlugin  </p>
+
+<h2>インストール方法</h2>
+
+<p><strong>「いいね！」プラグラインのダウンロード</strong><br>
+symfonyコマンドを使って、直接DLします。</p>
+
+<pre><code>cd path/to/OpenPNE
+./symfony opPlugin:install opLikePlugin -r 1.0.1
+</code></pre>
+
+<p><strong>「いいね！」に対応したプラグインのダウンロード</strong>  </p>
+
+<pre><code>cd path/to/OpenPNE  
+./symfony opPlugin:install opLikePlugin -r 1.0.1  
+./symfony opPlugin:install opDiaryPlugin -r 1.4.2  
+./symfony opPlugin:install opTimelinePlugin -r 1.0.1  
+</code></pre>
+
+<p><strong>OpnePNE本体側Bootstrapの変更・画像の差し替え</strong></p>
+
+<pre><code>rm 'OpenPNE ディレクトリ'/web/img/*
+cp 'OpenPNE ディレクトリ'/plugins/opLikePlugin/web/img/* 'OpenPNE ディレクトリ'/web/img/
+</code></pre>
+
+<p><strong>CSSの編集</strong>
+ ‘OpenPNE ディレクトリ'/web/css/bootstrap.cssを開き、以下の3行を追加</p>
+
+<pre><code>.icon-thumbs-up {
+  background-position: -96px -144px;
+}
+</code></pre>
+
+<p><strong>プラグインのインストール</strong></p>
+
+<pre><code>./symfony opPlugin:migrate
+</code></pre>
+
+<p><strong>アセット</strong></p>
+
+<pre><code>./symfony plugin:publish-assets
+</code></pre>
+
+<h2>動作環境</h2>
+
+<p>OpnePNE3.8.0以上  </p>
+
+<h2>更新履歴</h2>
+
+<ul>
+<li>2012/11/16 Ver.0.0.3  opDiaryPlugin及び、opCommunityTopicPluginに対応。 </li>
+<li>2012/11/16 Ver.0.0.2  opNicePlugin → opLikePlugin に名称変更 </li>
+<li>2012/11/08 Ver.0.0.1 「いいね！」機能を追加 </li>
+</ul><h2>要望・フィードバック</h2>
+
+<p><a href="https://github.com/ichikawatatsuya/opLikePlugin/issues">https://github.com/ichikawatatsuya/opLikePlugin/issues</a></p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Oplikeplugin maintained by <a href="https://github.com/ichikawatatsuya">ichikawatatsuya</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
